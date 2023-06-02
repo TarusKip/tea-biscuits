@@ -31,6 +31,10 @@ class Books(models.Model):
     # A genre can contain may books, books can cover many genres
     # Genre class has already been defined so we can specify the object above
 
+    def display_genre(self):
+        return ', '.join(genre.name for genre in self.genre.all()[:3])
+    display_genre.short_description = 'Genre'
+
     language = models.ForeignKey('Languages', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
@@ -91,7 +95,7 @@ class Author(models.Model):
         return reverse('author-detail', args=[str(self.id)])
     
     def __str__(self):
-        return f'{self.first_name}, {self.last_name}'
+        return f'{self.first_name} {self.last_name}'
     
 
 class Languages(models.Model):
