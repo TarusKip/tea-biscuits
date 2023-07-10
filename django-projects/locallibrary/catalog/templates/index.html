@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+<title>TMNL</title>
+{% endblock %}
+
+{% block content %}
+  <h1>The Midnight Library Home</h1>
+  <p>
+    Welcome to The Midnight Library, a website developed by
+    <em>Tarus Kipkosgei</em>!
+  </p>
+  <h2>Our Diverse Offering</h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Genres:</strong> {{num_genres}}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Flower in Title:</strong>{{num_flower}}</li>
+  </ul>
+{% endblock %}
